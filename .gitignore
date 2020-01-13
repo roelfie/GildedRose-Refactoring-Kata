@@ -3,3 +3,6 @@ obj
 *.sln.DotSettings.user
 .vs
 vendor
+
+*.iml
+.idea
