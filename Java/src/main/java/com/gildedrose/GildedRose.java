@@ -27,6 +27,8 @@ class GildedRose {
                     if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         if (items[i].sellIn < 11) {
                             // Backstage passes quality increase by +2 when 6-10 days before 'sell by' date
+                            // TODO bug? according to spec update +2 if sellIn <=10, but sellIn hasn't been updated yet!
+                            // So if at this line, sellIn == 10, immediately after it will be decreased to 9!
                             if (items[i].quality < 50) {
                                 items[i].quality = items[i].quality + 1;
                             }

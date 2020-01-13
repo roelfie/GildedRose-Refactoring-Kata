@@ -32,7 +32,10 @@ So this requires some thinking ahead.
 
 ## Step 3: Refactor
 
-- Refactor existing code
+- No more logic based on item.name
+  - Aged Brie: quality improves over time (boolean: item.isQualityImproving)
+  - Sulfuras: quality constant, no 'sell by' date (boolean: item.isLegendary)
+  - Backstage passes: Exotic quality increase algorithm
 
 ## Step 4: Add new features
 

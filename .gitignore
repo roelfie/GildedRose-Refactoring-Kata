@@ -6,3 +6,4 @@ vendor
 
 *.iml
 .idea
+.DS_Store
