@@ -26,9 +26,13 @@ NB 2: Code as crappy as GildedRose.java I always first annotate with inline comm
   - At this point we might discover that the existing code doesn't work according to specs (in which case Product Owner will have to decide what to do). 
 - Now we're ready to refactor the existing code
 
-Challenge: 
-Choose a test approach that doesn't require a complete overhaul after GildedRose.java is refactored. 
+Challenges: 
+- Choose a test approach that doesn't require a complete overhaul after GildedRose.java is refactored. 
 So this requires some thinking ahead. 
+
+Findings:
+- Aged Brie quality improves twice as fast after the 'sell by' date. And once it reaches quality 50 it keeps that quality forever. Doesn't seem right? Check with Product Owner!
+- There were 3 tests in TexttestFixture.java (+5 Dexterity Vest, Elixir of the Mongoose, Conjured Mana Cake) that I've copied over to the new Junit test. Keep or remove?
 
 ## Step 3: Refactor
 
