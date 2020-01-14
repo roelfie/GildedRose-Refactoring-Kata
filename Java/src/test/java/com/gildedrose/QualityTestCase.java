@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @Builder
 @AllArgsConstructor
 public class QualityTestCase {
@@ -18,7 +20,7 @@ public class QualityTestCase {
         return expectedQualities.length - 1; // Ignore index 0, which represents today.
     }
 
-    public int getExpectedQualityOnDay(int i) {
-        return expectedQualities[i];
+    public void verifyQualityOnDay(int i) {
+        assertEquals(expectedQualities[i], item.quality, String.format("Unexpected quality on day %d", i));
     }
 }

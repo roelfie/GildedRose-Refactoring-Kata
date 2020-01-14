@@ -1,6 +1,5 @@
 package com.gildedrose;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.aggregator.AggregateWith;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -23,22 +22,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 class GildedRoseTest {
 
-    @Test
-    void foo() {
-        Item[] items = new Item[] { new Item("foo", 0, 0) };
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-        assertEquals("foo", app.items[0].name);
-    }
-
     @ParameterizedTest(name = "[{0}] {2}(sellIn = {3}, quality = {4})")
-    @CsvFileSource(resources = "/GildedRose-quality-test.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/GildedRose.csv", numLinesToSkip = 1)
     void testUpdateQuality(@AggregateWith(QualityTestCaseAggregator.class) QualityTestCase testCase) {
-        Item item = testCase.getItem();
-        GildedRose rose = new GildedRose(new Item[]{item});
+        GildedRose rose = new GildedRose(testCase.getItem());
         for (int i = 1; i <= testCase.getNumberOfDays(); i++) {
             rose.updateQuality();
-            assertEquals(testCase.getExpectedQualityOnDay(i), item.quality, String.format("Unexpected quality on day %d", i));
+            testCase.verifyQualityOnDay(i);
         }
     }
 
@@ -66,7 +56,7 @@ class GildedRoseTest {
     })
     void testUpdateSellIn(String name, int sellIn, int expectedSellIn) {
         Item item = new Item(name, sellIn, 0);
-        GildedRose rose = new GildedRose(new Item[]{item});
+        GildedRose rose = new GildedRose(item);
         rose.updateQuality();
         assertEquals(expectedSellIn, item.sellIn);
     }
@@ -84,7 +74,7 @@ class GildedRoseTest {
     })
     void testUpdateSellIn_independentOfQuality(String name, int quality, int sellIn, int expectedSellIn) {
         Item item = new Item(name, sellIn, quality);
-        GildedRose rose = new GildedRose(new Item[]{item});
+        GildedRose rose = new GildedRose(item);
         rose.updateQuality();
         assertEquals(expectedSellIn, item.sellIn);
     }

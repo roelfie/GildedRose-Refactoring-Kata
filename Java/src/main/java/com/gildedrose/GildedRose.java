@@ -7,6 +7,10 @@ class GildedRose {
         this.items = items;
     }
 
+    GildedRose(Item item) {
+        this(new Item[]{item});
+    }
+
     // TODO bad method name (it updates quality, but also sellIn).
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
