@@ -36,6 +36,7 @@ Findings:
 
 ## Step 3: Refactor
 
+
 - No more logic based on item.name
   - Aged Brie: quality improves over time (boolean: item.isQualityImproving)
   - Sulfuras: quality constant, no 'sell by' date (boolean: item.isLegendary)
