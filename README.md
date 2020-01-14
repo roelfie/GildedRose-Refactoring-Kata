@@ -42,10 +42,8 @@ copied over to the new Junit test. Keep or remove?
 ## Step 3: Refactor
 
 - In this case the original code (GildedRose.updateQuality()) was so crappy, that a rewrite was better than refactoring:
-  - The complexity of the existing code is so high, that a refactoring would require multiple cycles. A rewrite was 
-  simply faster.
-  - Another problem with refactoring bad code is that some of its quirks may end up in the new code. Sometimes it's 
-  better to start with a clean sheet.
+  - Because of high complexity, a refactoring would require multiple cycles. A rewrite was simply faster.
+  - Danger of quirks ending up in the new code after refactoring. Sometimes it's better to start with a clean sheet.
   - The high-coverage test suite gave me the confidence to do a rewrite. 
 
 Optional refactorings (not yet done; requires changes to Goblin's code):
@@ -57,7 +55,7 @@ Optional refactorings (not yet done; requires changes to Goblin's code):
 
 Specs: "Conjured" items degrade in Quality twice as fast as normal items.
 
-- Add tests for conjured items (they should fail)
+- Add tests for conjured items (which initially fail)
 - Implement 'conjured' feature
 
 ## Step 5: Final touch: Simplify, cleanup, etc.
