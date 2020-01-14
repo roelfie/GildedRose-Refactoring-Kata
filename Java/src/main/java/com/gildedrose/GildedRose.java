@@ -17,6 +17,9 @@ class GildedRose {
     private static final Consumer<Item> UPDATE_QUALITY_DEFAULT = item -> {
         item.quality = Math.max(0, item.quality - (item.sellIn>=0 ? 1 : 2));
     };
+    private static final Consumer<Item> UPDATE_QUALITY_CONJURED = item -> {
+        item.quality = Math.max(0, item.quality - (item.sellIn>=0 ? 2 : 4));
+    };
     private static final Consumer<Item> UPDATE_QUALITY_SULFURAS = item -> {/*Do nothing (legendary item)*/};
     private static final Consumer<Item> UPDATE_QUALITY_AGED_BRIE = item -> {
         item.quality = Math.min(50, item.quality + (item.sellIn>=0 ? 1 : 2));
@@ -73,6 +76,9 @@ class GildedRose {
                 break;
             case "Backstage passes to a TAFKAL80ETC concert":
                 UPDATE_QUALITY_BACKSTAGE.accept(item);
+                break;
+            case "Conjured Mana Cake":
+                UPDATE_QUALITY_CONJURED.accept(item);
                 break;
             default:
                 UPDATE_QUALITY_DEFAULT.accept(item);
