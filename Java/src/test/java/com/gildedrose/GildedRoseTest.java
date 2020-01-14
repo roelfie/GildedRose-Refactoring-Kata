@@ -58,7 +58,7 @@ class GildedRoseTest {
         Item item = new Item(name, sellIn, 0);
         GildedRose rose = new GildedRose(item);
         rose.updateQuality();
-        assertEquals(expectedSellIn, item.sellIn);
+        assertEquals(expectedSellIn, item.getSellIn());
     }
 
     @ParameterizedTest(name = "[{index}] {0}(quality = {1}, sellIn = {2})")
@@ -76,7 +76,7 @@ class GildedRoseTest {
         Item item = new Item(name, sellIn, quality);
         GildedRose rose = new GildedRose(item);
         rose.updateQuality();
-        assertEquals(expectedSellIn, item.sellIn);
+        assertEquals(expectedSellIn, item.getSellIn());
     }
 
 }

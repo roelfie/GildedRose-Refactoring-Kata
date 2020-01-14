@@ -21,6 +21,6 @@ public class QualityTestCase {
     }
 
     public void verifyQualityOnDay(int i) {
-        assertEquals(expectedQualities[i], item.quality, String.format("Unexpected quality on day %d", i));
+        assertEquals(expectedQualities[i], item.getQuality(), String.format("Unexpected quality on day %d", i));
     }
 }

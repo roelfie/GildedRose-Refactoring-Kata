@@ -9,6 +9,8 @@ My approach to this kata was, in short:
 3. Refactor
 4. Add new features (test-driven)
 
+Click on my name (roelfie) to view only my commits on this refactoring kata.
+
 ## Step 1: Understand requirements / actual workings
 
 - Read requirements
