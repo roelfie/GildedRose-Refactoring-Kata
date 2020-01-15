@@ -2,12 +2,19 @@
 
 The main purpose of this README is to give you insight into what went through my mind when I was doing this coding kata. 
 
+- Click on [my name (roelfie)](https://github.com/roelfie/GildedRose-Refactoring-Kata/commits?author=roelfie) to view 
+all my commits on this refactoring kata.
+- I have created a [branch (refactor-goblin)](https://github.com/roelfie/GildedRose-Refactoring-Kata/tree/refactor-goblin) 
+in which I have refactored the Goblin's code (based on steps 1-4 in which I refactored the GildedRose class and added 
+the new 'conjured' feature).
+
 My approach to this kata was, in short:
 
 1. Fix existing test suite (if applicable)
 2. Improve test coverage (until I felt confident enough to start refactoring)
 3. Refactor
 4. Add new features (test-driven)
+5. Refactor Goblin's code (on a separate branch)
 
 ## Step 1: Understand requirements / actual workings
 
@@ -58,6 +65,3 @@ Specs: "Conjured" items degrade in Quality twice as fast as normal items.
 - Add tests for conjured items (which initially fail)
 - Implement 'conjured' feature
 
-## Step 5: Final touch: Simplify, cleanup, etc.
-
-- 
