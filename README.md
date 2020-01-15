@@ -2,14 +2,19 @@
 
 The main purpose of this README is to give you insight into what went through my mind when I was doing this coding kata. 
 
+- Click on [my name (roelfie)](https://github.com/roelfie/GildedRose-Refactoring-Kata/commits?author=roelfie) to view 
+all my commits on this refactoring kata.
+- I have created a [branch (refactor-goblin)](https://github.com/roelfie/GildedRose-Refactoring-Kata/tree/refactor-goblin) 
+in which I have refactored the Goblin's code (based on steps 1-4 in which I refactored the GildedRose class and added 
+the new 'conjured' feature).
+
 My approach to this kata was, in short:
 
 1. Fix existing test suite (if applicable)
 2. Improve test coverage (until I felt confident enough to start refactoring)
 3. Refactor
 4. Add new features (test-driven)
-
-Click on my name (roelfie) to view only my commits on this refactoring kata.
+5. 
 
 ## Step 1: Understand requirements / actual workings
 
@@ -48,10 +53,7 @@ copied over to the new Junit test. Keep or remove?
   - Danger of quirks ending up in the new code after refactoring. Sometimes it's better to start with a clean sheet.
   - The high-coverage test suite gave me the confidence to do a rewrite. 
 
-Optional refactorings (not yet done; requires changes to Goblin's code):
-- Make Item immutable.
-- No more logic based on item.name. Use OO concepts instead to model the characteristics of all the different items 
-(quality increases instead of decreases; exotic quality calculations (backstage passes); ..)
+I didn't touch the Goblin's code in this step. I will refactor his code in a later step.
 
 ## Step 4: Add new features
 
@@ -60,6 +62,15 @@ Specs: "Conjured" items degrade in Quality twice as fast as normal items.
 - Add tests for conjured items (which initially fail)
 - Implement 'conjured' feature
 
-## Step 5: Final touch: Simplify, cleanup, etc.
+## Step 5: Refactor Goblin's code
 
-- 
+- Make Item immutable. No public fields.
+  - Ensures that an item can not be messed with. The only public operation on an item is: ask for next day's item.
+- No more logic based on item.name. Use OOP concepts instead to model the characteristics of all the different items 
+(like quality increase of Aged Cheese; and exotic quality calculations for Backstage Passes; ..).
+  - This also allows you to introduce other sorts of aged cheese (not only Brie), and other sorts of backstage passes, etc.
+- Moving logic to where you would naturally expect it, also makes it easier to test and maintain it. Examples:
+  - The fact that the 'sellIn' value of a legendary item never changes, can now be tested in LegendaryItemTest.java.
+  - The fact that the quality of a backstage pass drops to 0 after the concert date, can be tested in BackstagePassTest.java (to do)
+  - The fact that the quality of a aged cheese increases over time, can be tested in AgedCheeseTest.java (to do)
+

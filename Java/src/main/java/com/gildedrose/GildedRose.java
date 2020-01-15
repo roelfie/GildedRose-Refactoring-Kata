@@ -1,19 +1,17 @@
 package com.gildedrose;
 
+import com.gildedrose.domain.Item;
+
 import java.util.Arrays;
 
 import static java.util.stream.Collectors.toList;
 
-class GildedRose {
+public class GildedRose {
 
     Item[] items;
 
     public GildedRose(Item[] items) {
         this.items = items;
-    }
-
-    GildedRose(Item item) {
-        this(new Item[]{item});
     }
 
     public void updateQuality() {

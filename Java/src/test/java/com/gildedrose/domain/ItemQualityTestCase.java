@@ -1,4 +1,4 @@
-package com.gildedrose;
+package com.gildedrose.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Builder
 @AllArgsConstructor
-public class QualityTestCase {
+public class ItemQualityTestCase {
 
     @Getter
     private Item item;
@@ -20,7 +20,7 @@ public class QualityTestCase {
         return expectedQualities.length - 1; // Ignore index 0, which represents today.
     }
 
-    public void verifyQualityOnDay(int i) {
+    public void verifyItemQualityOnDay(Item item, int i) {
         assertEquals(expectedQualities[i], item.getQuality(), String.format("Unexpected quality on day %d", i));
     }
 }
