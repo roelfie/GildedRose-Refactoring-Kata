@@ -14,7 +14,6 @@ My approach to this kata was, in short:
 2. Improve test coverage (until I felt confident enough to start refactoring)
 3. Refactor
 4. Add new features (test-driven)
-5. 
 
 ## Step 1: Understand requirements / actual workings
 
